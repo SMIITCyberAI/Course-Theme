@@ -1,0 +1,575 @@
+// Theme Mixins
+// ========================================================================
+
+@mixin hook-article() {
+  strong {
+    color: $global-secondary-background;
+  }
+}
+
+@mixin hook-link-misc() {
+  .uk-link-border {
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0px;
+      bottom: 2px;
+      height: 1px;
+      width: 100%;
+      background: $base-link-color;
+    }
+
+    &:hover:after {
+      background: $base-link-hover-color;
+    }
+  }
+
+  .uk-link-border-bold {
+
+    &:after {
+      bottom: 0;
+      height: 3px;
+    }
+  }
+}
+
+@mixin hook-card-misc() {
+  .uk-card .uk-light .uk-like {
+    background-color: #fff;
+    color: $global-danger-background;;
+
+    &:hover, &:focus, &:active {
+      background-color: #fff;
+      color: $global-danger-background;
+      path {
+        fill: $global-danger-background;
+      }
+    }
+  }
+
+  .uk-card-small {
+    .uk-card-title {
+      font-size: 1.0625rem;
+    }
+  }
+}
+
+@mixin hook-inverse-form(){ border-color: $inverse-global-border; }
+@mixin hook-inverse-form-focus(){ border-color: $inverse-global-muted-color; }
+
+@mixin hook-form-misc(){
+  .uk-input, .uk-select {
+    border-radius: $border-medium-rounded-border-radius;
+  }
+
+  .uk-select {
+    font-weight: 700;
+  }
+
+  .uk-form-label {
+    font-weight: 700;
+  }
+
+  .uk-select-light {
+    background-color: $select-light-background;
+    border-color: $select-light-background;
+    font-size: $xsmall-font-size;
+    letter-spacing: 1px;
+    padding: 0 25px 0 15px !important;
+
+    &:focus, &:active {
+      background-color: $select-light-background;
+      border-color: $select-light-background;
+      color: $base-heading-color;
+    }
+  }
+
+  .uk-select-large {
+    height: $form-large-height !important;
+    padding-left: 15px;
+    padding-right: 25px;
+  }
+
+  .uk-form-large {
+    border-width: 2px;
+  }
+}
+
+@mixin hook-button-misc() {
+
+  .uk-button {
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .uk-button:not(.uk-button-large) {
+    border-radius: $border-medium-rounded-border-radius;
+  }
+
+  .uk-button-large {
+    border-radius: $border-large-rounded-border-radius;
+  }
+
+  .uk-icon-button-large {
+    height: 52px;
+    width: 52px;
+  }
+
+  .facebook, .google-plus, .linkedin, .twitter {
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .twitter {
+    background: #00acee;
+
+    &:hover {
+      background: lighten(#00acee, 7%);
+    }
+  }
+
+  .facebook {
+    background: #3b5998;
+
+    &:hover {
+      background: lighten(#3b5998, 7%);
+    }
+  }
+
+  .google-plus {
+    background: #CC3333;
+
+    &:hover {
+      background: lighten(#CC3333, 7%);
+    }
+  }
+
+  .linkedin {
+    background: #0e76a8;
+
+    &:hover {
+      background: lighten(#0e76a8, 7%);
+    }
+  }
+
+  // Warning
+  .uk-button-warning {
+    background-color: $button-warning-background;
+    color: $button-primary-color;
+    border: 1px solid transparent;
+  }
+
+  .uk-button-warning:hover,
+  .uk-button-warning:focus {
+    background-color: $button-warning-hover-background;
+    color: $button-primary-color;
+  }
+
+  .uk-button-warning:active,
+  .uk-button-warning.uk-active {
+    background-color: $button-warning-hover-background;
+    color: $button-primary-color;
+  }
+
+  // Success
+  .uk-button-success {
+    background-color: $button-success-background;
+    color: $button-primary-color;
+    border: 1px solid transparent;
+  }
+
+  .uk-button-success:hover,
+  .uk-button-success:focus {
+    background-color: $button-success-hover-background;
+    color: $button-primary-hover-color;
+  }
+
+  .uk-button-success:active,
+  .uk-button-success.uk-active {
+    background-color: $button-success-hover-background;
+    color: $button-primary-active-color;
+  }
+
+  // Success
+  .uk-button-primary-preserve {
+    background-color: $button-primary-background;
+    color: $button-primary-color;
+    border: 1px solid transparent;
+  }
+
+  .uk-button-primary-preserve:hover,
+  .uk-button-primary-preserve:focus {
+    background-color: $button-primary-hover-background;
+    color: $button-primary-hover-color;
+  }
+
+  .uk-button-primary-preserve:active,
+  .uk-button-primary-preserve.uk-active {
+    background-color: $button-primary-hover-background;
+    color: $button-primary-active-color;
+  }
+
+  // Primary light
+  .uk-button-primary-light {
+    background-color: $button-primary-light-background;
+    color: $button-primary-light-color;
+    border: $button-border-width solid $button-primary-light-background;
+  }
+
+  .uk-button-primary-light:hover,
+  .uk-button-primary-light:focus,
+  .uk-button-primary-light:active,
+  .uk-button-primary-light.uk-active {
+    background-color: $button-primary-light-hover-background;
+    color: $button-primary-light-hover-color;
+    border: $button-border-width solid $button-primary-light-hover-background;
+  }
+
+
+  // Primary outline
+  .uk-button-primary-outline {
+    background-color: $button-default-background;
+    color: $button-primary-background;
+    border: $button-border-width solid $button-primary-background;
+  }
+
+  .uk-button-primary-outline:hover,
+  .uk-button-primary-outline:focus {
+    background-color: $button-primary-background;
+    color: $button-primary-hover-color;
+    border: $button-border-width solid $button-primary-background;
+  }
+
+  .uk-button-primary-outline:active,
+  .uk-button-primary-outline.uk-active {
+    background-color: $button-primary-background;
+    color: $button-primary-active-color;
+    border: $button-border-width solid $button-primary-background;
+  }
+
+  // Danger outline
+  .uk-button-danger-outline {
+    background-color: $button-default-background;
+    color: $button-danger-background;
+    border: $button-border-width solid $button-danger-background;
+  }
+
+  .uk-button-danger-outline:hover,
+  .uk-button-danger-outline:focus {
+    background-color: $button-danger-background;
+    color: $button-danger-hover-color;
+    border: $button-border-width solid $button-danger-background;
+  }
+
+  .uk-button-danger-outline:active,
+  .uk-button-danger-outline.uk-active {
+    background-color: $button-danger-background;
+    color: $button-danger-active-color;
+    border: $button-border-width solid $button-danger-background;
+  }
+
+  // Success outline
+  .uk-button-success-outline {
+    background-color: $button-default-background;
+    color: $button-success-background;
+    border: $button-border-width solid $button-success-background;
+  }
+
+  .uk-button-success-outline:hover,
+  .uk-button-success-outline:focus {
+    background-color: $button-success-background;
+    color: $button-primary-hover-color;
+    border: $button-border-width solid $button-success-background;
+  }
+
+  .uk-button-success-outline:active,
+  .uk-button-success-outline.uk-active {
+    background-color: $button-success-background;
+    color: $button-primary-hover-color;
+    border: $button-border-width solid $button-success-background;
+  }
+
+  // Warning outline
+  .uk-button-warning-outline {
+    background-color: $button-default-background;
+    color: $button-warning-background;
+    border: $button-border-width solid $button-warning-background;
+  }
+
+  .uk-button-warning-outline:hover,
+  .uk-button-warning-outline:focus {
+    background-color: $button-warning-background;
+    color: $button-primary-hover-color;
+    border: $button-border-width solid $button-warning-background;
+  }
+
+  .uk-button-warning-outline:active,
+  .uk-button-warning-outline.uk-active {
+    background-color: $button-warning-background;
+    color: $button-primary-active-color;
+    border: $button-border-width solid $button-warning-background;
+  }
+
+}
+
+@mixin hook-offcanvas-bar() {
+  font-weight: 700;
+}
+
+@mixin hook-label-misc() {
+  .uk-label-light {
+    background-color: $select-light-background;
+    color: $global-color;
+    font-size: $xsmall-font-size;
+    padding: 8px 17px;
+    font-weight: 700;
+  }
+}
+
+@mixin hook-accordion-title(){
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        width: ($accordion-title-font-size);
+        height: ($accordion-title-line-height * 1em);
+        margin-right: $accordion-icon-margin-left;
+        float: left;
+        @include svg-fill($internal-accordion-close-image, "#000", $accordion-icon-color);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    .uk-open > &::before { @include svg-fill($internal-accordion-open-image, "#000", $accordion-icon-color); }
+
+    font-weight: 600;
+
+}
+
+@mixin hook-table-misc() {
+  .uk-table-divider > tr:first-child,
+  .uk-table-divider > :first-child > tr,
+  .uk-table-divider > :first-child > tr:first-child {
+      border-top: $table-divider-border-width solid $table-divider-border;
+  }
+
+  .uk-table-divider > tr:last-child,
+  .uk-table-divider > :last-child > tr,
+  .uk-table-divider > :last-child > tr:last-child {
+      border-bottom: $table-divider-border-width solid $table-divider-border;
+  }
+}
+
+@mixin hook-pagination() {
+  .uk-disabled:not(.uk-button-primary-light) {
+    color: $button-primary-color;
+  }
+
+  .uk-disabled.uk-button-primary-light {
+    color: $pagination-item-disabled-color;
+  }
+
+  .uk-button {
+    padding: 0 15px;
+  }
+}
+
+@mixin hook-navbar-sticky() {
+  border-bottom: solid 1px $border-xlight;
+}
+
+@mixin hook-utility-misc() {
+  .uk-letter-spacing-small {
+    letter-spacing: 1px;;
+  }
+
+  .uk-letter-spacing-medium {
+    letter-spacing: 2px;;
+  }
+
+  .uk-letter-spacing-xlarge {
+    letter-spacing: 4px;;
+  }
+
+  .uk-border-rounded-medium {
+    border-radius: $border-medium-rounded-border-radius;
+  }
+  
+  .uk-border-rounded-large {
+    border-radius: $border-large-rounded-border-radius;
+  }
+
+  .uk-margin-xsmall-top {
+    margin-top: 6px;
+  }
+
+  .uk-margin-xsmall-bottom {
+    margin-bottom: 6px;
+  }
+
+  header {
+    > .uk-sticky {
+      z-index: 990;
+    }
+  }
+
+  .uk-text-content {
+    font-size: 1.1875rem;
+  }
+
+  .uk-text-price, .uk-light .uk-label.uk-text-price {
+    color: $base-heading-color;
+  }
+
+  .uk-text-xxsmall {
+    font-size: $xxsmall-font-size;
+  }
+
+  .uk-text-xsmall {
+    font-size: $xsmall-font-size;
+  }
+
+  .uk-text-demi-bold {
+    font-weight: 600;
+  }
+
+  .uk-rating svg {
+    color: $global-warning-background;
+  }
+
+  .uk-rating-filled svg {
+    polygon {
+      fill: $global-warning-background;
+    }
+  }
+
+  .uk-text-muted-preserve {
+    color: $global-muted-color;
+  }
+
+  .uk-background-body {
+    background: linear-gradient(357deg, $global-muted-background 0%, #fff 100%);
+  }
+
+  .uk-overlay-xlight {
+    background: $overlay-xlight;
+  }
+
+  .uk-overlay-light {
+    background: $overlay-light;
+  }
+
+  .uk-overlay-blend {
+    background-color: $overlay-blend;
+  }
+
+  .hvr-forward {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+
+  .hvr-forward:active,
+  .hvr-forward:focus,
+  .hvr-forward:hover {
+    -webkit-transform: translateX(6px);
+    transform: translateX(6px);
+  }
+
+  .hvr-back {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+
+  .hvr-back:hover,
+  .hvr-back:focus,
+  .hvr-back:active {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+
+  .uk-container-max {
+    max-width: $container-max-width;
+    margin: 0 auto;
+  }
+
+  .uk-padding-slide {
+    padding: $padding-large-padding 60px;
+  }
+  @media (min-width: $breakpoint-large) {
+    .uk-padding-slide {
+      padding: $padding-large-padding 100px;
+    }
+  }
+
+  .uk-header-banner-events {
+    padding: 15px 26px 20px;
+  }
+
+  .uk-header-banner-courses {
+    padding: 27px;
+  }
+
+  .uk-header-banner.uk-light {
+    margin-top: $global-gutter;
+
+    label {
+      font-size: 0.8125rem;
+      color: $inverse-global-muted-color;
+      font-weight: 600;
+    }
+
+    .uk-select, .uk-input {
+      border: transparent;
+      border-bottom: solid 1px $global-primary-background;
+      border-radius: 0;
+      background-color: inherit;
+      padding-left: 0;
+
+      &:focus {
+        border-bottom: solid 1px $global-primary-background;
+        background-color: inherit;
+      }
+    }
+
+    .uk-icon-button {
+      width: 58px;
+      height: 58px;
+      border-radius: $border-large-rounded-border-radius;
+      border: none;
+      background-color: $global-primary-background;
+
+      &:hover {
+        background-color: lighten($global-primary-background, 4%);
+        color: $inverse-global-color;
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    .uk-header-banner.uk-light {
+      margin-top: -50px;
+    }
+  }
+}
+
+
